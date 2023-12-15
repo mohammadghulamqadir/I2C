@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="normlize.css">
+    <style>
+      /* Add styling for the '.active' class and modify hover effect */
+
+
+      .active,
+      .nav-links li:hover {
+        padding: 0.5rem 0.5rem;
+        color: white;
+        border-radius: 4rem;
+        border: 1px solid #46b0e6;
+        background: #46b0e6;
+        box-shadow: 0px 1rem 4rem 0px rgba(70, 176, 230, 0.7);
+        transition: all 0.5s;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+        color: white;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-right: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .burger {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          background-color: #333;
+        }
+
+        .nav-links.show {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem 0.5rem;
+        }
+        .burger {
+          display: block;
+        }
+        .nav-link {
+          display: inline-block;
+          margin: 16px;
+          width: fit-content;
+        }
+      }
+      /* 03048918085 */
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><img src="images/i2c-logo.png" alt="i2c logo" /></div>
+      <ul class="nav-links">
+        <li class="nav-link">
+            <a href="#">About Us</a>
+        </li>
+        <li class="nav-link">
+            <a href="#">Registration</a>
+        </li>
+        <li class="nav-link">
+            <a href="#">Careers</a>
+        </li>
+        <li class="nav-link">
+            <a class="active" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div class="burger">&#9776;</div>
+    </nav>
+    <script>
+      // JavaScript file for handling responsive behavior
+      document.addEventListener("DOMContentLoaded", function () {
+        const burger = document.querySelector(".burger");
+        const navLinks = document.querySelector(".nav-links");
+
+        burger.addEventListener("click", function () {
+          navLinks.classList.toggle("show"); // Toggle the 'show' class to display/hide navigation links
+        });
+      });
+    </script>
+  </body>
+</html>
